@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿@model IEnumerable<Product>// Now we go to our Index.cshtml file and make each ProductID on our Index page a link that will take us to an individual product in our Index.cshtml View for Product, we’ll add some html to do this.
 
 <h2>Products</h2>
 <table class="table">
@@ -14,7 +14,7 @@
     @foreach (var product in Model)
     {
         <tr>
-            <td>@product.ProductID</td>
+            <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
             <td>@product.Name</td>
             <td>@product.Price</td>
             <td>@product.CategoryID</td>

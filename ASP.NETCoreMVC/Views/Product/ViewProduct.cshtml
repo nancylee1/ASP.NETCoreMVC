@@ -1,0 +1,26 @@
+﻿
+@model Product  //a way to View one product at a time. Since we are passing in product as an argument in the View() method,that will be the Model we work with inside of the ViewProduct.cshtml View we are about to create
+
+<h3>@Model.Name Information</h3>  
+
+<table class="table">
+    <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category ID</th>
+        <th>On Sale</th>
+        <th>StockLevel</th>
+    </tr>
+    <tr>
+        <td>@Model.ProductID</td>
+        <td>@Model.Name</td>
+        <td>@Model.Price</td>
+        <td>@Model.CategoryID</td>
+        <td>@Model.OnSale</td>
+        <td>@Model.StockLevel</td>
+    </tr>
+</table>
+
+
+
