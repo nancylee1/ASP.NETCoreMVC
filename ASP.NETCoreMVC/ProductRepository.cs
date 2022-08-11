@@ -27,5 +27,27 @@ namespace ASP.NETCoreMVC
             _conn.Execute("UPDATE products SET Name = @name, Price = @price WHERE ProductID = @id", new { name = product.Name, price = product.Price, id = product.ProductID });
         }
 
+        // Now we will create the implementation of the methods specified inside of the interface, in the ProductRepository:
+        //InsertProduct()
+        public void InsertProduct(Product productToInsert)
+        {
+            _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID);",
+                new { name = productToInsert.Name, price = productToInsert.Price, categoryID = productToInsert.CategoryID });
+        }
+
+        // GetCategories()
+        public IEnumerable<Category> GetCategories()
+        {
+            return _conn.Query<Category>("SELECT * FROM categories;");
+        }
+
+        // AssignCategory()
+        public Product AssignCategory()
+        {
+            var categoryList = GetCategories();
+            var product = new Product();
+            product.Categories = categoryList;
+            return product;
+        }
     }
 }

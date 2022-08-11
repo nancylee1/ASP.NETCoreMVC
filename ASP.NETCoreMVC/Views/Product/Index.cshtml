@@ -1,6 +1,11 @@
 ﻿@model IEnumerable<Product>// Now we go to our Index.cshtml file and make each ProductID on our Index page a link that will take us to an individual product in our Index.cshtml View for Product, we’ll add some html to do this.
 
 <h2>Products</h2>
+
+ <div style="display: block">
+     <a href="/Product/InsertProduct/">Create a New Product</a>
+ </div>
+
 <table class="table">
     <tr>
         <th>ID</th>

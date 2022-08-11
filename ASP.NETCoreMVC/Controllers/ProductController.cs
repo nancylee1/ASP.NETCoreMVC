@@ -39,5 +39,21 @@ namespace ASP.NETCoreMVC.Controllers
 
             return RedirectToAction("ViewProduct", new { id = product.ProductID });
         }
+
+        // InsertProduct()
+
+        public IActionResult InsertProduct()
+        {
+            var prod = repo.AssignCategory();
+            return View(prod);
+        }
+
+        //InsertProductToDatabase()
+
+        public IActionResult InsertProductToDatabase(Product productToInsert)
+        {
+            repo.InsertProduct(productToInsert);
+            return RedirectToAction("Index");
+        }
     }
 }
