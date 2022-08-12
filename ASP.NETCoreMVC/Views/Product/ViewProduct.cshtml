@@ -26,5 +26,17 @@
     <a href="/Product/UpdateProduct/@Model.ProductID">Update this Product</a>
 </div>
 
+@*// Add the below HTML to the bottom of the ViewProduct.cshtml file to allow the user to delete a product:
+// Note: Our code will also create an alert that asks the user “Are you sure?”*@
+<div style="display: block">
 
+    @using (Html.BeginForm("DeleteProduct", "Product", "Post"))
+    {
+        <input type="hidden" asp-for="ProductID" value="@Model.ProductID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+    }
+</div>
+
+@*Notice in the above code that our HTML triggers the DeleteProduct Controller method located in the Product Controller. 
+The onclick with create an alert on the website that asks the user if they are sure they want to delete the product*@
 

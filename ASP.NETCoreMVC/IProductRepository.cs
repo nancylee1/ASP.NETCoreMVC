@@ -11,6 +11,8 @@ namespace ASP.NETCoreMVC
         public IEnumerable<Category> GetCategories();       // "
         public Product AssignCategory();                    // "
 
+        public void DeleteProduct(Product product); // give the user the ability to delete products
+
     }
 
 }

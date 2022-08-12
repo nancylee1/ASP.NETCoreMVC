@@ -55,5 +55,12 @@ namespace ASP.NETCoreMVC.Controllers
             repo.InsertProduct(productToInsert);
             return RedirectToAction("Index");
         }
+
+        // Create DeleteProduct(Product product) method in the ProductController to delete a product
+        public IActionResult DeleteProduct(Product product)
+        {
+            repo.DeleteProduct(product);
+            return RedirectToAction("Index");
+        }
     }
 }
